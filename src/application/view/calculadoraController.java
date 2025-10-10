@@ -1,0 +1,119 @@
+package application.view;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+public class calculadoraController {
+
+    @FXML
+    private Label btnR;
+
+    @FXML
+    private Button btndividir;
+
+    @FXML
+    private Button btnmultiplicar;
+
+    @FXML
+    private Button btnsoma;
+
+    @FXML
+    private Button btnsubtrair;
+
+    @FXML
+    private TextField txtn1;
+
+    @FXML
+    private TextField txtn2;
+    
+    
+    public void Somar() {
+
+    	double numero1 = Double.valueOf(txtn1.getText());    	
+    	double numero2 = Double.valueOf(txtn2.getText());
+    	try {
+       	 numero1 = Double.valueOf(txtn1.getText());
+       	} catch(Exception e){
+       		numero1 = 0;
+       		txtn1.setText("0");
+       	}
+   	try {
+      	 numero2 = Double.valueOf(txtn1.getText());
+      	} catch(Exception e){
+      		numero2 = 0;
+      		txtn2.setText("0");
+      	}
+    	double resultado=numero1+numero2;
+    	
+    	btnR.setText(String.valueOf(resultado));
+    	//retorna o valor de double para string
+    	//informa o resultado na label com o setText
+    }
+    public void Subtrair() {
+    	double numero1 = Double.valueOf(txtn1.getText());
+    	double numero2 = Double.valueOf(txtn2.getText());
+    	double resultado=numero1-numero2;
+    	try {
+       	 numero1 = Double.valueOf(txtn1.getText());
+       	} catch(Exception e){
+       		numero1 = 0;
+       		txtn1.setText("0");
+       	}
+   	try {
+      	 numero2 = Double.valueOf(txtn1.getText());
+      	} catch(Exception e){
+      		numero2 = 0;
+      		txtn2.setText("0");
+      	}
+    	btnR.setText(String.valueOf(resultado));
+    	
+    }
+    public void Dividir() {
+    	double numero1 = Double.valueOf(txtn1.getText());
+    	double numero2 = Double.valueOf(txtn2.getText());
+    	double resultado=numero1/numero2;
+    	try {
+       	 numero1 = Double.valueOf(txtn1.getText());
+       	} catch(Exception e){
+       		numero1 = 0;
+       		txtn1.setText("0");
+       	}
+   	try {
+      	 numero2 = Double.valueOf(txtn1.getText());
+      	} catch(Exception e){
+      		numero2 = 0;
+      		txtn2.setText("0");
+      	}
+    	btnR.setText(String.valueOf(resultado));
+    	
+    }
+    public void Multiplicar() {
+    	double numero1 = Double.valueOf(txtn1.getText());
+    	double numero2 = Double.valueOf(txtn2.getText());
+    	double resultado=numero1*numero2;
+    	try {
+       	 numero1 = Double.valueOf(txtn1.getText());
+       	} catch(Exception e){
+       		numero1 = 0;
+       		txtn1.setText("0");
+       	}
+   	try {
+      	 numero2 = Double.valueOf(txtn1.getText());
+      	} catch(Exception e){
+      		numero2 = 0;
+      		txtn2.setText("0");
+      	}
+    	btnR.setText(String.valueOf(resultado));
+    	
+    } 
+    private void initialize() {
+    	txtn1.textProperty().addListener(
+    		(observable, oldValue, newValue)->{
+    			txtn1.setText(NewValue.replaceAll("[^\\]",""));
+    		});
+    
+    
+}
+}
