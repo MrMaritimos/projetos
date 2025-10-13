@@ -16,6 +16,10 @@ public class aplicativoController {
     @FXML
     private Button btcalculadora;
     
+
+    @FXML
+    private Button btcalculadoraIMC;
+    
     
     private void carregarTela(String fxmlfile) {
         try {
@@ -36,7 +40,8 @@ public class aplicativoController {
 
             Scene cena = conteudoPane.getScene();
             if (cena != null) {
-                Stage stage = (Stage) cena.getWindow();
+                @SuppressWarnings("unused")
+				Stage stage = (Stage) cena.getWindow();
              
             }
 
@@ -54,9 +59,14 @@ public class aplicativoController {
     private void abrirCalculadora() {
         carregarTela("calculadora.fxml");
     }
-
+    
     @FXML
     private void initialize() {
-        
+    	
+    }
+
+    @FXML
+    private void abrirCalculadoraIMC() {
+        carregarTela("IMC.fxml");
     }
 }
