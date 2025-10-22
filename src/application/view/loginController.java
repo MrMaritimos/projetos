@@ -7,6 +7,9 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+
+
 
 public class loginController {
 
@@ -15,6 +18,9 @@ public class loginController {
 
 	 @FXML
 	    private TextField usuario;
+	 
+	  @FXML
+	    private Label lblCadastrar;
 	 
     public void sair() {
         System.exit(0);
@@ -52,13 +58,30 @@ public class loginController {
         
     }
     
-    @FXML //@FXML ou @Override indica que o codigo sera executado assim que carregar a página
    
-    	private void initialize() {
-    	//Quando pressionar enter no campo do usuário foca a adição no campo de senha
-    	usuario.setOnAction(e->{senha.requestFocus();});
-    	//Quando pressionar enter no campo senha aciona o metodo de entrar
-    	senha.setOnAction(e->{entrar();});
-    	
+    
+    @FXML
+	private void initialize() {
+    	/* QUANDO PRESSIONAR ENTER NO CAMPO USUARIO 
+    		FOCA A EDIÇÃO NO CAMPO DE SENHA
+    	*/
+    		usuario.setOnAction(e->{senha.requestFocus();});
+    	/* QUANDO PRESSIONAR ENTER NO CAMPO SENHA 
+    		ACIONA O METODO DE ENTRAR
+    	*/
+    		senha.setOnAction(e->{entrar();});
+    		
+    		lblCadastrar.setOnMouseClicked(event->{
+    			try {
+    				//ABRE A TELA CADASTRO USUARIO
+    				Parent root = FXMLLoader.load(getClass().getResource("novoUsuario.fxml"));
+    				Stage stage = new Stage();
+    				Scene scene = new Scene(root);
+    				stage.setScene(scene);
+    				stage.show();
+    			}catch (Exception e) {
+    				e.printStackTrace();
+    			}
+    		});
+    	}
     }
-}

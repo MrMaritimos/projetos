@@ -20,6 +20,12 @@ public class aplicativoController {
     @FXML
     private Button btcalculadoraIMC;
     
+    @FXML
+    private Button btJogo;
+    
+    @FXML
+    private Button btcalculadoraMedia;
+    
     
     private void carregarTela(String fxmlfile) {
         try {
@@ -68,5 +74,15 @@ public class aplicativoController {
     @FXML
     private void abrirCalculadoraIMC() {
         carregarTela("IMC.fxml");
+    }
+    
+    @FXML
+    private void abrirJogo() {
+        carregarTela("jogo.FXML");
+    }
+    
+    @FXML
+    private void abrircalculadoraMedia() {
+        carregarTela("calculadoraMedia.fxml");
     }
 }
